@@ -13,6 +13,13 @@
 		A5501C491B1B5E8300EDCE1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5501C481B1B5E8300EDCE1F /* Images.xcassets */; };
 		A5501C4C1B1B5E8300EDCE1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5501C4A1B1B5E8300EDCE1F /* LaunchScreen.xib */; };
 		A5501C581B1B5E8300EDCE1F /* D3ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C571B1B5E8300EDCE1F /* D3ViewTests.swift */; };
+		A5501C691B1B5ED800EDCE1F /* D3Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C621B1B5ED800EDCE1F /* D3Button.swift */; };
+		A5501C6A1B1B5ED800EDCE1F /* D3ImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */; };
+		A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C641B1B5ED800EDCE1F /* D3Label.swift */; };
+		A5501C6C1B1B5ED800EDCE1F /* D3TextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */; };
+		A5501C6D1B1B5ED800EDCE1F /* D3TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C661B1B5ED800EDCE1F /* D3TextView.swift */; };
+		A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C671B1B5ED800EDCE1F /* D3Venders.swift */; };
+		A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C681B1B5ED800EDCE1F /* D3View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		A5501C511B1B5E8300EDCE1F /* D3ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = D3ViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5501C561B1B5E8300EDCE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5501C571B1B5E8300EDCE1F /* D3ViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D3ViewTests.swift; sourceTree = "<group>"; };
+		A5501C621B1B5ED800EDCE1F /* D3Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Button.swift; sourceTree = "<group>"; };
+		A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ImageVIew.swift; sourceTree = "<group>"; };
+		A5501C641B1B5ED800EDCE1F /* D3Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Label.swift; sourceTree = "<group>"; };
+		A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TextFiled.swift; sourceTree = "<group>"; };
+		A5501C661B1B5ED800EDCE1F /* D3TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TextView.swift; sourceTree = "<group>"; };
+		A5501C671B1B5ED800EDCE1F /* D3Venders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Venders.swift; sourceTree = "<group>"; };
+		A5501C681B1B5ED800EDCE1F /* D3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,7 @@
 		A5501C3E1B1B5E8300EDCE1F /* D3View */ = {
 			isa = PBXGroup;
 			children = (
+				A5501C611B1B5EB100EDCE1F /* D3View */,
 				A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */,
 				A5501C431B1B5E8300EDCE1F /* ViewController.swift */,
 				A5501C451B1B5E8300EDCE1F /* Main.storyboard */,
@@ -110,6 +125,20 @@
 				A5501C561B1B5E8300EDCE1F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5501C611B1B5EB100EDCE1F /* D3View */ = {
+			isa = PBXGroup;
+			children = (
+				A5501C621B1B5ED800EDCE1F /* D3Button.swift */,
+				A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */,
+				A5501C641B1B5ED800EDCE1F /* D3Label.swift */,
+				A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */,
+				A5501C661B1B5ED800EDCE1F /* D3TextView.swift */,
+				A5501C671B1B5ED800EDCE1F /* D3Venders.swift */,
+				A5501C681B1B5ED800EDCE1F /* D3View.swift */,
+			);
+			path = D3View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */,
+				A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */,
 				A5501C441B1B5E8300EDCE1F /* ViewController.swift in Sources */,
+				A5501C6A1B1B5ED800EDCE1F /* D3ImageVIew.swift in Sources */,
+				A5501C691B1B5ED800EDCE1F /* D3Button.swift in Sources */,
+				A5501C6C1B1B5ED800EDCE1F /* D3TextFiled.swift in Sources */,
+				A5501C6D1B1B5ED800EDCE1F /* D3TextView.swift in Sources */,
 				A5501C421B1B5E8300EDCE1F /* AppDelegate.swift in Sources */,
+				A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
