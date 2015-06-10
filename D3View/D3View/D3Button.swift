@@ -12,12 +12,12 @@ import UIKit
 
 class D3Button: UIButton {
     
-    required init(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder) {  //默认按钮样式:圆角
         super.init(coder:aDecoder)
         if let style:ViewStyle = ViewStyle(rawValue: self.tag){
             initStyle(style)
         }
-        if self.tag == 0{ //默认圆角
+        if self.tag == 0{
             showCorner(ViewStyle.Conrer)
         }
     }

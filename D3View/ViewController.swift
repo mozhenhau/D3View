@@ -46,6 +46,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         d3view.zoomin(1.0)
         d3view.frame = exFrame
         d3view.backgroundColor = UIColor.yellowColor()
+        
         switch indexPath.row{
             case 0:
                 d3view.zoomin(1.0)
@@ -56,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 d3view.shake()
             
             case 2:
-                d3view.bounce()
+                d3view.bounce({println("finish")})
             
             case 3:
                 d3view.pulse()

@@ -49,6 +49,15 @@ public class D3View: UIView {
         }
     }
     
+    //是否圆形
+    @IBInspectable var isRound: Bool = false {
+        didSet {
+            if isRound{
+                initStyle(ViewStyle.Round)
+            }
+        }
+    }
+    
     @IBInspectable var borderColor: UIColor = UIColor.clearColor(){
         didSet {
             layer.borderColor = borderColor.CGColor

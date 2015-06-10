@@ -12,6 +12,7 @@ import UIKit
 
 public class D3ImageView:UIImageView{
     @IBInspectable var cornerRadius: CGFloat = 0
+    //是否圆形
     @IBInspectable var isRound: Bool = false {
         didSet {
             if isRound{
@@ -20,7 +21,7 @@ public class D3ImageView:UIImageView{
         }
     }
     
-    
+    //是否圆角，并且要设置圆角角度
     @IBInspectable var isCorner: Bool = false {
         didSet {
             if isRound{

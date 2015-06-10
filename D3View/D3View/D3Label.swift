@@ -12,6 +12,7 @@ import UIKit
 
 public class D3Label:UILabel{
     @IBInspectable var isHide: Bool = true   //为true时num为0会隐藏
+    //显示为红点
     @IBInspectable var isBadge: Bool = false {
         didSet {
             if isBadge{
