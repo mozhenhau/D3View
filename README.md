@@ -24,7 +24,11 @@
 ##安装使用
 ###使用CocoaPods (iOS 8+, OS X 10.9+)
 
-pod 'D3View', '~> 1.0.0'
+    platform :ios, '8.0'
+    use_frameworks!
+    
+    pod 'D3View', '~> 1.0.0'
+
 swift调用framework需要import D3View
 
 ###普通使用
