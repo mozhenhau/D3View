@@ -6,8 +6,8 @@
 
 
 ##动画使用
-比如要实现左右摇:view.shake()
-如果摇完有回调:view.shake("finish")
+比如要实现左右摇:`view.shake()`  
+如果摇完有回调:`view.shake({println("finish")})`  
 其他动画效果参照代码  
 ![此处输入图片的描述][2]
 
