@@ -96,7 +96,7 @@ class D3Notice: NSObject {
     }
     
     //菊花图
-    static func wait(time:NSTimeInterval?,autoClear: Bool) {
+    static func wait(time:NSTimeInterval,autoClear: Bool) {
         clear()
         let frame = CGRectMake(0, 0, 78, 78)
         let mainView = UIView(frame: frame)
@@ -107,15 +107,7 @@ class D3Notice: NSObject {
         ai.frame = CGRectMake(21, 21, 36, 36)
         ai.startAnimating()
         mainView.addSubview(ai)
-        
-        mainView.center = rv.center
-        window.addSubview(mainView)
-        notices.append(mainView)
-        
-        time == nil ? longTime : time
-        if autoClear {
-            NSTimer.scheduledTimerWithTimeInterval(time!, target: self, selector: "hideNotice:", userInfo: mainView, repeats: false)
-        }
+        addView(mainView, time: time, autoClear: autoClear)
     }
     
     //仅文字
@@ -135,15 +127,8 @@ class D3Notice: NSObject {
         mainView.addSubview(label)
         mainView.frame = CGRectMake(0, 0, label.frame.width + 50 , label.frame.height + 30)
     
-        mainView.center = rv.center
         label.center = CGPointMake(mainView.frame.width/2, mainView.frame.height/2)
-        
-        window.addSubview(mainView)
-        notices.append(mainView)
-        
-        if autoClear {
-            NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: "hideNotice:", userInfo: mainView, repeats: false)
-        }
+        addView(mainView, time: time, autoClear: autoClear)
     }
     
     //有勾、叉和警告
@@ -175,11 +160,15 @@ class D3Notice: NSObject {
         label.text = text
         label.textAlignment = NSTextAlignment.Center
         mainView.addSubview(label)
-        
+        addView(mainView, time: time, autoClear: autoClear)
+    }
+    
+    static func addView(mainView:UIView,time:NSTimeInterval,autoClear:Bool){
         mainView.center = rv.center
         window.addSubview(mainView)
         notices.append(mainView)
-        
+        //加动画,不喜欢删掉
+        mainView.pulse()
         if autoClear {
             NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: "hideNotice:", userInfo: mainView, repeats: false)
         }

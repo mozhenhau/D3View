@@ -48,36 +48,36 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         d3view.backgroundColor = UIColor.yellowColor()
         
         switch indexPath.row{
-            case 0:
+            case 0:  //重置
                 d3view.zoomin(1.0)
                 d3view.frame = exFrame
                 d3view.backgroundColor = UIColor.yellowColor()
             
-            case 1:
+            case 1:  //左右摇
                 d3view.shake()
             
-            case 2:
+            case 2:  //上下药
                 d3view.bounce({println("finish")})
             
-            case 3:
+            case 3:  //脉冲
                 d3view.pulse()
                 
-            case 4:
+            case 4:  //摇摆
                 d3view.swing()
                 
-            case 5:
+            case 5:  //缩小
                 d3view.compress()
             
-            case 6:
+            case 6:  //放大
                 d3view.zoomin(2.0)
             
-            case 7:
+            case 7:  //掉落
                 d3view.hinge()
             
-            case 8:
+            case 8:  //翻转
                 d3view.flip()
                 
-            case 9:
+            case 9:  //翻页
                 d3view.pageing()
                 
             case 10:  //后面的效果自己尝试，换参数而已
