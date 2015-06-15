@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A531046F1B2F281D0098313F /* D3Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531046E1B2F281D0098313F /* D3Notice.swift */; };
 		A5501C421B1B5E8300EDCE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */; };
 		A5501C441B1B5E8300EDCE1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C431B1B5E8300EDCE1F /* ViewController.swift */; };
 		A5501C471B1B5E8300EDCE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5501C451B1B5E8300EDCE1F /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A531046E1B2F281D0098313F /* D3Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Notice.swift; sourceTree = "<group>"; };
 		A5501C3C1B1B5E8300EDCE1F /* D3View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3View.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5501C401B1B5E8300EDCE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		A5501C611B1B5EB100EDCE1F /* D3View */ = {
 			isa = PBXGroup;
 			children = (
+				A531046E1B2F281D0098313F /* D3Notice.swift */,
 				A5501C621B1B5ED800EDCE1F /* D3Button.swift */,
 				A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */,
 				A5501C641B1B5ED800EDCE1F /* D3Label.swift */,
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A531046F1B2F281D0098313F /* D3Notice.swift in Sources */,
 				A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */,
 				A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */,
 				A5501C441B1B5E8300EDCE1F /* ViewController.swift in Sources */,
@@ -445,6 +449,7 @@
 				A5501C5D1B1B5E8300EDCE1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5501C5E1B1B5E8300EDCE1F /* Build configuration list for PBXNativeTarget "D3ViewTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +458,7 @@
 				A5501C601B1B5E8300EDCE1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
