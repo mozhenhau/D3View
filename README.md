@@ -6,8 +6,8 @@
 
 
 ##动画使用
-比如要实现左右摇:view.shake()
-如果摇完有回调:view.shake("finish")
+比如要实现左右摇:`view.shake()`  
+如果摇完有回调:`view.shake({println("finish")})`  
 其他动画效果参照代码  
 ![此处输入图片的描述][2]
 
@@ -24,7 +24,11 @@
 ##安装使用
 ###使用CocoaPods (iOS 8+, OS X 10.9+)
 
-pod 'D3View', '~> 0.0.3'
+    platform :ios, '8.0'
+    use_frameworks!
+    
+    pod 'D3View', '~> 1.0.0'
+
 swift调用framework需要import D3View
 
 ###普通使用
