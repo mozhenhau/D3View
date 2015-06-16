@@ -45,13 +45,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         d3view.zoomin(1.0)
         d3view.frame = exFrame
-        d3view.backgroundColor = UIColor.yellowColor()
+        d3view.backgroundColor = UIColor.blueColor()
         
         switch indexPath.row{
             case 0:  //重置
                 d3view.zoomin(1.0)
                 d3view.frame = exFrame
-                d3view.backgroundColor = UIColor.yellowColor()
+                d3view.backgroundColor = UIColor.blueColor()
             
             case 1:  //左右摇
                 d3view.shake()

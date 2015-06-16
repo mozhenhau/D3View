@@ -2,69 +2,6 @@
 
 import UIKit
 
-extension String {
-    func escapeStr() -> String {
-        var raw: NSString = self
-        var str:CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].","+",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))
-        return str as NSString as! String
-    }
-    
-    //MARK: 字符分割扩展
-    func split(s:String)->Array<String>
-    {
-        if s.isEmpty{
-            var x:Array<String> = []
-            for y in self{
-                x.append(String(y))
-            }
-            return x
-        }
-        return self.componentsSeparatedByString(s)
-    }
-    
-    //MARK: 字符翻转扩展
-    func reverse()-> String{
-        var s:Array = self.split("").reverse()
-        var x:String = ""
-        for y in s{
-            x += y
-        }
-        return x
-    }
-    
-    //MARK: 字符包含扩展
-    func contain(s:String)->Bool{
-        var ns = self as NSString
-        if ns.rangeOfString(s).length > 0{
-            return true
-        }
-        return false
-    }
-}
-
-extension Array{
-
-    func filter<T>(name:String)->Array<T>{
-        var newArr:Array<T> = []
-        for item in self {
-            var pros:MirrorType = reflect(item)
-            for(var i:Int = 1;i < pros.count;i++){
-                var pro = pros[i]
-                let key = pro.0        //pro  name
-                let value = pro.1.value
-                if name == key{
-                    newArr.append(pro.1.value as! T)
-                    break
-                }
-            }
-        }
-        return newArr
-    }
-}
-
-
-
-
 //MARK: UIView动画扩展
 var DEFAULT_DURATION:NSTimeInterval = 0.25
 extension UIView{
@@ -205,10 +142,10 @@ extension UIView{
     }
     
     
-    //MARK: 左右摇
-    func shake(finish:VoidBlock){
-        var dist:CGFloat = 10
-        var time:NSTimeInterval = 0.15
+    //MARK: 左右摇,dis是幅度，time是时间
+    func shake(dis:CGFloat,time:NSTimeInterval,finish:VoidBlock){
+        var dist:CGFloat = dis
+        var time:NSTimeInterval = time
         self.moveX(-dist, duration: time, finish: {
             self.moveX(dist*2, duration: time,finish: {
                 self.moveX(-dist*2, duration: time, finish: {
@@ -220,17 +157,25 @@ extension UIView{
         })
     }
     
+    func shake(finish:VoidBlock){
+        self.shake(10.0, time: 0.15,finish:finish)
+    }
+    
+    func shake(dis:CGFloat,time:NSTimeInterval){
+        self.shake(dis, time: time, finish: nil)
+    }
+    
     func shake(){
-        self.shake(nil)
+        self.shake(10.0,time: 0.15,finish: nil)
     }
     
     //MARK: 上下反弹
-    func bounce(finish:VoidBlock){
-        var dist:CGFloat = 10
-        self.moveY(-dist, duration: DEFAULT_DURATION, finish: {
-            self.moveY(dist, duration: 0.15, finish: {
-                self.moveY(-(dist/2), duration: 0.15, finish: {
-                    self.moveY(dist/2, duration: 0.05, finish: {
+    func bounce(dis:CGFloat,time:NSTimeInterval,finish:VoidBlock){
+        var dist:CGFloat = dis
+        self.moveY(-dist, duration: time, finish: {
+            self.moveY(dist, duration: time, finish: {
+                self.moveY(-(dist/2), duration: time, finish: {
+                    self.moveY(dist/2, duration: time, finish: {
                         finish?()
                     })
                 })
@@ -238,16 +183,25 @@ extension UIView{
         })
     }
     
-    func bounce(){
-        self.bounce(nil)
+    func bounce(finish:VoidBlock){
+        self.bounce(10.0, time: 0.15,finish:finish)
     }
     
+    func bounce(dis:CGFloat,time:NSTimeInterval){
+        self.bounce(dis, time: time, finish: nil)
+    }
+    
+    func bounce(){
+        self.bounce(10.0,time: 0.15,finish: nil)
+    }
+    
+    
     //MARK: 心跳
-    func pulse(finish:VoidBlock){
-        UIView.animateWithDuration(0.5 as NSTimeInterval, animations: {
-            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
+    func pulse(dis:CGFloat,time:NSTimeInterval,finish:VoidBlock){
+        UIView.animateWithDuration(time, animations: {
+            self.transform = CGAffineTransformMakeScale(dis, dis)
         }, completion: {(f) in
-            UIView.animateWithDuration(0.5 as NSTimeInterval, delay: 0.1 as NSTimeInterval, options: UIViewAnimationOptions.LayoutSubviews, animations: {
+            UIView.animateWithDuration(time, delay: 0.1 as NSTimeInterval, options: UIViewAnimationOptions.LayoutSubviews, animations: {
                 self.transform = CGAffineTransformMakeScale(1, 1)
                 }, completion: {(f) in
                     finish?()
@@ -255,8 +209,18 @@ extension UIView{
         })
     }
     
+    func pulse(finish:VoidBlock){
+        self.pulse(1.2, time: 0.5,finish:finish)
+    }
+    
+    
+    func pulse(dis:CGFloat,time:NSTimeInterval){
+        self.pulse(dis, time: time, finish: nil)
+    }
+    
+    
     func pulse(){
-        self.pulse(nil)
+        self.pulse(1.2,time: 0.5,finish: nil)
     }
     
     //MARK: 摇摆
@@ -341,6 +305,8 @@ extension UIView{
         self.flip(nil)
     }
     
+    
+    //MARK: 翻页
     func pageing(finish:VoidBlock){
         self.d3Animate(UIViewAnimationTransition.CurlUp,finish: finish)
     }
@@ -348,9 +314,6 @@ extension UIView{
     func pageing(){
         self.pageing(nil)
     }
-    
-    //MARK: 切换效果
-    
     
 }
 
@@ -547,5 +510,66 @@ extension UIView{
         }
         return target as! UIViewController
         
+    }
+}
+
+
+extension String {
+    func escapeStr() -> String {
+        var raw: NSString = self
+        var str:CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].","+",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))
+        return str as NSString as! String
+    }
+    
+    //MARK: 字符分割扩展
+    func split(s:String)->Array<String>
+    {
+        if s.isEmpty{
+            var x:Array<String> = []
+            for y in self{
+                x.append(String(y))
+            }
+            return x
+        }
+        return self.componentsSeparatedByString(s)
+    }
+    
+    //MARK: 字符翻转扩展
+    func reverse()-> String{
+        var s:Array = self.split("").reverse()
+        var x:String = ""
+        for y in s{
+            x += y
+        }
+        return x
+    }
+    
+    //MARK: 字符包含扩展
+    func contain(s:String)->Bool{
+        var ns = self as NSString
+        if ns.rangeOfString(s).length > 0{
+            return true
+        }
+        return false
+    }
+}
+
+extension Array{
+    
+    func filter<T>(name:String)->Array<T>{
+        var newArr:Array<T> = []
+        for item in self {
+            var pros:MirrorType = reflect(item)
+            for(var i:Int = 1;i < pros.count;i++){
+                var pro = pros[i]
+                let key = pro.0        //pro  name
+                let value = pro.1.value
+                if name == key{
+                    newArr.append(pro.1.value as! T)
+                    break
+                }
+            }
+        }
+        return newArr
     }
 }

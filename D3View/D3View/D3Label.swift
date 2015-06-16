@@ -11,6 +11,7 @@ import UIKit
 
 
 public class D3Label:UILabel{
+    var ori_width:CGFloat = 0
     @IBInspectable var isHide: Bool = true   //为true时num为0会隐藏
     //显示为红点
     @IBInspectable var isBadge: Bool = false {
@@ -29,9 +30,7 @@ public class D3Label:UILabel{
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
-        if let style:ViewStyle = ViewStyle(rawValue: self.tag){
-            initStyle(style)
-        }
+        self.ori_width = self.frame.width
     }
     
     func setBadge(num:Int){
@@ -47,20 +46,20 @@ public class D3Label:UILabel{
         var string:String = "\(num)"
         if num < 10
         {
-            width = self.frame.height
+            width = ori_width
         }
         else if num < 100
         {
-            width = self.frame.height*1.5
+            width = ori_width*1.5
         }
         else
         {
-            width = self.frame.height*2
+            width = ori_width*2
             string = "99+"
         }
         self.text = string
-        //        self.frame.width = width
+        self.frame.size.width = width
+        self.shake(2.0, time: 0.15)
         self.addConstraint(NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: width))
-        
     }
 }
