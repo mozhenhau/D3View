@@ -12,7 +12,7 @@ import UIKit
 public class D3TextView:UITextView{
     
     required public init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
         if let style:ViewStyle = ViewStyle(rawValue: self.tag){
             initStyle(style)
         }

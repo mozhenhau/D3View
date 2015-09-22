@@ -42,7 +42,7 @@ class D3ScrollView: UIView ,UIScrollViewDelegate{
     
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
         //默认样式
         d3ImgView = UIImageView(image: UIImage(named:""))
         self.contentMode = UIViewContentMode.ScaleAspectFit
@@ -132,7 +132,7 @@ class D3ScrollView: UIView ,UIScrollViewDelegate{
     {
         if myTimer != nil
         {
-            myTimer!.fireDate = NSDate.distantFuture() as! NSDate
+            myTimer!.fireDate = NSDate.distantFuture() 
         }
     }
     
@@ -207,7 +207,7 @@ class D3ScrollView: UIView ,UIScrollViewDelegate{
         }
         
         //换页后mainImgView 显示改图片，并且显示该页标题
-        var img:String = imgArr[currentPage]
+        let img:String = imgArr[currentPage]
         getImg(d3ImgView, img: img)
         
         if !d3Label.hidden{

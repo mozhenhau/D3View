@@ -37,7 +37,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell  = tableView.dequeueReusableCellWithIdentifier("clickCell") as! UITableViewCell
+        let cell  = tableView.dequeueReusableCellWithIdentifier("clickCell")!
         cell.textLabel?.text = dataSource[indexPath.row]
         return cell
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 d3view.shake()
             
             case 2:  //上下药
-                d3view.bounce({println("finish")})
+                d3view.bounce({D3Log("finish")})
             
             case 3:  //脉冲
                 d3view.pulse()

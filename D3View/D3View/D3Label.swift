@@ -29,7 +29,7 @@ public class D3Label:UILabel{
     }
     
     required public init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
         self.ori_width = self.frame.width
     }
     

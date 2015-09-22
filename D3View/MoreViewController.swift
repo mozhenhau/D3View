@@ -18,12 +18,12 @@ class MoreViewController: UIViewController {
         super.viewDidLoad()
         //初始化点击后闭包
         radioBtn.addBlock({btn in
-            println("click\(btn.tag)")
+            print("click\(btn.tag)")
         })
         
         //初始化d3ScrollView
-        var imgs = ["http://7vzpd0.com1.z0.glb.clouddn.com/pod.png","http://7vzpd0.com1.z0.glb.clouddn.com/EEFAD82B-6612-4783-98C4-67B0AB98DB69.png"]
-        var labels = ["1","2"]
+        let imgs = ["http://7vzpd0.com1.z0.glb.clouddn.com/pod.png","http://7vzpd0.com1.z0.glb.clouddn.com/EEFAD82B-6612-4783-98C4-67B0AB98DB69.png"]
+        let labels = ["1","2"]
         d3ScrollView.initScrollView(imgs, labels:labels , style: ScrollViewStyle.all)
         
         //d3Label
@@ -32,9 +32,9 @@ class MoreViewController: UIViewController {
 
     
     @IBAction func clickShowActionSheet(sender: AnyObject) {
-        var sheet = D3ActionSheet()
+        let sheet = D3ActionSheet()
         sheet.initView(["照相","相片"], block: {
-            println($0) //打印下标
+            D3Log($0) //打印下标
         })
         sheet.showInView(self.view)
     }

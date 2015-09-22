@@ -21,7 +21,6 @@
 		A5501C471B1B5E8300EDCE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5501C451B1B5E8300EDCE1F /* Main.storyboard */; };
 		A5501C491B1B5E8300EDCE1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5501C481B1B5E8300EDCE1F /* Images.xcassets */; };
 		A5501C4C1B1B5E8300EDCE1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5501C4A1B1B5E8300EDCE1F /* LaunchScreen.xib */; };
-		A5501C581B1B5E8300EDCE1F /* D3ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C571B1B5E8300EDCE1F /* D3ViewTests.swift */; };
 		A5501C691B1B5ED800EDCE1F /* D3Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C621B1B5ED800EDCE1F /* D3Button.swift */; };
 		A5501C6A1B1B5ED800EDCE1F /* D3ImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */; };
 		A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C641B1B5ED800EDCE1F /* D3Label.swift */; };
@@ -29,17 +28,8 @@
 		A5501C6D1B1B5ED800EDCE1F /* D3TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C661B1B5ED800EDCE1F /* D3TextView.swift */; };
 		A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C671B1B5ED800EDCE1F /* D3Venders.swift */; };
 		A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C681B1B5ED800EDCE1F /* D3View.swift */; };
+		A5B077571BB19E5400715A5E /* D3Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B077561BB19E5400715A5E /* D3Log.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A5501C521B1B5E8300EDCE1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5501C341B1B5E8300EDCE1F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5501C3B1B1B5E8300EDCE1F;
-			remoteInfo = D3View;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A531046E1B2F281D0098313F /* D3Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Notice.swift; sourceTree = "<group>"; };
@@ -58,9 +48,6 @@
 		A5501C461B1B5E8300EDCE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5501C481B1B5E8300EDCE1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5501C4B1B1B5E8300EDCE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A5501C511B1B5E8300EDCE1F /* D3ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = D3ViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5501C561B1B5E8300EDCE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5501C571B1B5E8300EDCE1F /* D3ViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D3ViewTests.swift; sourceTree = "<group>"; };
 		A5501C621B1B5ED800EDCE1F /* D3Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Button.swift; sourceTree = "<group>"; };
 		A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ImageVIew.swift; sourceTree = "<group>"; };
 		A5501C641B1B5ED800EDCE1F /* D3Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Label.swift; sourceTree = "<group>"; };
@@ -68,17 +55,11 @@
 		A5501C661B1B5ED800EDCE1F /* D3TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TextView.swift; sourceTree = "<group>"; };
 		A5501C671B1B5ED800EDCE1F /* D3Venders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Venders.swift; sourceTree = "<group>"; };
 		A5501C681B1B5ED800EDCE1F /* D3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3View.swift; sourceTree = "<group>"; };
+		A5B077561BB19E5400715A5E /* D3Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A5501C391B1B5E8300EDCE1F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5501C4E1B1B5E8300EDCE1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				A5501C3E1B1B5E8300EDCE1F /* D3View */,
-				A5501C541B1B5E8300EDCE1F /* D3ViewTests */,
 				A5501C3D1B1B5E8300EDCE1F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				A5501C3C1B1B5E8300EDCE1F /* D3View.app */,
-				A5501C511B1B5E8300EDCE1F /* D3ViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,23 +120,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A5501C541B1B5E8300EDCE1F /* D3ViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				A5501C571B1B5E8300EDCE1F /* D3ViewTests.swift */,
-				A5501C551B1B5E8300EDCE1F /* Supporting Files */,
-			);
-			path = D3ViewTests;
-			sourceTree = "<group>";
-		};
-		A5501C551B1B5E8300EDCE1F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A5501C561B1B5E8300EDCE1F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		A5501C611B1B5EB100EDCE1F /* D3View */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +134,7 @@
 				A5501C661B1B5ED800EDCE1F /* D3TextView.swift */,
 				A5501C671B1B5ED800EDCE1F /* D3Venders.swift */,
 				A5501C681B1B5ED800EDCE1F /* D3View.swift */,
+				A5B077561BB19E5400715A5E /* D3Log.swift */,
 			);
 			path = D3View;
 			sourceTree = "<group>";
@@ -196,39 +159,18 @@
 			productReference = A5501C3C1B1B5E8300EDCE1F /* D3View.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5501C501B1B5E8300EDCE1F /* D3ViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5501C5E1B1B5E8300EDCE1F /* Build configuration list for PBXNativeTarget "D3ViewTests" */;
-			buildPhases = (
-				A5501C4D1B1B5E8300EDCE1F /* Sources */,
-				A5501C4E1B1B5E8300EDCE1F /* Frameworks */,
-				A5501C4F1B1B5E8300EDCE1F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A5501C531B1B5E8300EDCE1F /* PBXTargetDependency */,
-			);
-			name = D3ViewTests;
-			productName = D3ViewTests;
-			productReference = A5501C511B1B5E8300EDCE1F /* D3ViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A5501C341B1B5E8300EDCE1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = mozhenhau;
 				TargetAttributes = {
 					A5501C3B1B1B5E8300EDCE1F = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					A5501C501B1B5E8300EDCE1F = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = A5501C3B1B1B5E8300EDCE1F;
 					};
 				};
 			};
@@ -246,7 +188,6 @@
 			projectRoot = "";
 			targets = (
 				A5501C3B1B1B5E8300EDCE1F /* D3View */,
-				A5501C501B1B5E8300EDCE1F /* D3ViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,13 +203,6 @@
 				A53104C01B2FB0FE0098313F /* radio_btn_pre@2x.png in Resources */,
 				A5501C4C1B1B5E8300EDCE1F /* LaunchScreen.xib in Resources */,
 				A5501C491B1B5E8300EDCE1F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5501C4F1B1B5E8300EDCE1F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,26 +228,11 @@
 				A53104751B2F31BE0098313F /* NoticeViewController.swift in Sources */,
 				A5501C421B1B5E8300EDCE1F /* AppDelegate.swift in Sources */,
 				A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5501C4D1B1B5E8300EDCE1F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5501C581B1B5E8300EDCE1F /* D3ViewTests.swift in Sources */,
+				A5B077571BB19E5400715A5E /* D3Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A5501C531B1B5E8300EDCE1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5501C3B1B1B5E8300EDCE1F /* D3View */;
-			targetProxy = A5501C521B1B5E8300EDCE1F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A5501C451B1B5E8300EDCE1F /* Main.storyboard */ = {
@@ -356,6 +275,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -422,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -432,41 +353,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		A5501C5F1B1B5E8300EDCE1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = D3ViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D3View.app/D3View";
-			};
-			name = Debug;
-		};
-		A5501C601B1B5E8300EDCE1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = D3ViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D3View.app/D3View";
 			};
 			name = Release;
 		};
@@ -487,15 +375,6 @@
 			buildConfigurations = (
 				A5501C5C1B1B5E8300EDCE1F /* Debug */,
 				A5501C5D1B1B5E8300EDCE1F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5501C5E1B1B5E8300EDCE1F /* Build configuration list for PBXNativeTarget "D3ViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5501C5F1B1B5E8300EDCE1F /* Debug */,
-				A5501C601B1B5E8300EDCE1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

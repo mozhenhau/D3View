@@ -16,7 +16,7 @@ class D3RadioBtn: UIView {
     var isBackgroundImg = false  //用背景图setBackgroundImage还是用图setImage.默认使用setImage
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
         //初始化，把子视图的所有btn
         for view in self.subviews{
             if let btn = view as? UIButton{

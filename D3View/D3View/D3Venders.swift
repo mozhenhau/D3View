@@ -4,12 +4,12 @@ import UIKit
 
 //MARK: UIView动画扩展
 var DEFAULT_DURATION:NSTimeInterval = 0.25
+typealias VoidBlock = (() -> Void)?
 extension UIView{
-    typealias VoidBlock = (() -> Void)?
     
     //MARK: 加入动画效果
     func addAnimation(type:String,subType:String!,duration:CFTimeInterval){
-        var action:CATransition = CATransition()
+        let action:CATransition = CATransition()
         action.type = type
         if subType != nil{
             action.subtype = subType
@@ -64,7 +64,7 @@ extension UIView{
     
     func setRotation(r:CGFloat,duration:NSTimeInterval,finish:VoidBlock){
         UIView.animateWithDuration(duration, animations: {
-            var ratationTransform = CGAffineTransformIdentity
+            let ratationTransform = CGAffineTransformIdentity
             self.transform = CGAffineTransformRotate(ratationTransform, self.degreesToRadians(r))
         },completion:{(f) in
             finish?()
@@ -144,8 +144,8 @@ extension UIView{
     
     //MARK: 左右摇,dis是幅度，time是时间
     func shake(dis:CGFloat,time:NSTimeInterval,finish:VoidBlock){
-        var dist:CGFloat = dis
-        var time:NSTimeInterval = time
+        let dist:CGFloat = dis
+        let time:NSTimeInterval = time
         self.moveX(-dist, duration: time, finish: {
             self.moveX(dist*2, duration: time,finish: {
                 self.moveX(-dist*2, duration: time, finish: {
@@ -171,7 +171,7 @@ extension UIView{
     
     //MARK: 上下反弹
     func bounce(dis:CGFloat,time:NSTimeInterval,finish:VoidBlock){
-        var dist:CGFloat = dis
+        let dist:CGFloat = dis
         self.moveY(-dist, duration: time, finish: {
             self.moveY(dist, duration: time, finish: {
                 self.moveY(-(dist/2), duration: time, finish: {
@@ -225,7 +225,7 @@ extension UIView{
     
     //MARK: 摇摆
     func swing(finish:VoidBlock){
-        var dist:CGFloat = 15
+        let dist:CGFloat = 15
         self.setRotation(dist, finish: {
             self.setRotation(-dist, finish: {
                 self.setRotation(dist/2, finish: {
@@ -274,8 +274,8 @@ extension UIView{
     
     //MARK: 转轴
     func hinge(finish:VoidBlock){
-        var time:NSTimeInterval = 0.5
-        var point = CGPointMake(self.frame.origin.x, self.frame.origin.y)
+        let time:NSTimeInterval = 0.5
+        let point = CGPointMake(self.frame.origin.x, self.frame.origin.y)
         self.layer.anchorPoint = CGPointMake(0, 0)
         self.center = point
         self.setRotation(80, duration: time, finish: {
@@ -488,8 +488,8 @@ extension UIView{
             case .GrayBorder,.DarkGrayBorder:
                 changeBorderColor(style)
                 
-            default:
-                break
+//            default:
+//                break
             }
         }
     }
@@ -516,60 +516,17 @@ extension UIView{
 
 extension String {
     func escapeStr() -> String {
-        var raw: NSString = self
-        var str:CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].","+",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))
-        return str as NSString as! String
-    }
-    
-    //MARK: 字符分割扩展
-    func split(s:String)->Array<String>
-    {
-        if s.isEmpty{
-            var x:Array<String> = []
-            for y in self{
-                x.append(String(y))
-            }
-            return x
-        }
-        return self.componentsSeparatedByString(s)
-    }
-    
-    //MARK: 字符翻转扩展
-    func reverse()-> String{
-        var s:Array = self.split("").reverse()
-        var x:String = ""
-        for y in s{
-            x += y
-        }
-        return x
+        let raw: NSString = self
+        let str:CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].","+",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))
+        return str as NSString as String
     }
     
     //MARK: 字符包含扩展
     func contain(s:String)->Bool{
-        var ns = self as NSString
+        let ns = self as NSString
         if ns.rangeOfString(s).length > 0{
             return true
         }
         return false
-    }
-}
-
-extension Array{
-    
-    func filter<T>(name:String)->Array<T>{
-        var newArr:Array<T> = []
-        for item in self {
-            var pros:MirrorType = reflect(item)
-            for(var i:Int = 1;i < pros.count;i++){
-                var pro = pros[i]
-                let key = pro.0        //pro  name
-                let value = pro.1.value
-                if name == key{
-                    newArr.append(pro.1.value as! T)
-                    break
-                }
-            }
-        }
-        return newArr
     }
 }

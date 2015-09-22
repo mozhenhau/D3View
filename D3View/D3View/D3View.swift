@@ -14,12 +14,10 @@ public class D3View: UIView {
     //对应enum ViewStyle,可写多个用逗号隔开
     @IBInspectable var viewStyles: String = ""{
         didSet{
-            var styles = viewStyles.split(",")
+            let styles = viewStyles.componentsSeparatedByString(",")
             for style in styles{
-                if let styleInt = style.toInt() {
-                    if let style:ViewStyle = ViewStyle(rawValue: style.toInt()!){
-                        initStyle(style)
-                    }
+                if let style:ViewStyle = ViewStyle(rawValue: Int(style)!){
+                    initStyle(style)
                 }
             }
         }

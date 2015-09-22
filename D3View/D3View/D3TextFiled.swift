@@ -22,7 +22,7 @@ public class D3TextField:UITextField,UITextFieldDelegate{
     }
     
     required public init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
         delegate = self
         if let style:ViewStyle = ViewStyle(rawValue: self.tag){
             initStyle(style)
