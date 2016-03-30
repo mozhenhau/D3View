@@ -1,30 +1,33 @@
+
 #D3View
 ##简介
-一句代码轻松实现IOS常用动画效果，有swift和oc的版本。需要什么版本自己拖到项目  
-Swift只需要D3View.swift类，这个类是UIView扩展类  
-Objective-c只需要D3View.h和D3View.m  
+一句代码轻松实现IOS常用动画效果的超轻量库，旨在实现一些简单的动画效果基础  
+有swift和oc的版本。需要什么版本自己拖到项目，两者只需其中一个  
+Swift只需要拖D3View.swift到项目，Objective-c需要D3View.h和D3View.m到项目,都是UIView扩展类  
+  
+有希望实现的动画效果可以提issue，本人有空可以尝试实现 0.0
+也希望有朋友可以贡献实现一些动画效果。 右上角给个star呗亲~
 
 
 ##使用
-##1.动画使用--只需要D3Venders
-比如要实现左右摇:view.shake()  
-其他动画效果参照代码  
-![此处输入图片的描述][2]
+##1.因为是扩展，所以只要是uiview的子类都可以使用。 动画都是以`d3`_开头的方法，避免扩展冲突
+要实现左右摇，只需一句代码:
+
+    view.d3_shake()  
+
+噢耶，得咗
+其他动画效果参照代码,在ViewController有使用例子  
+![此处输入图片的描述][1]
 
 ##安装使用(swift)
 ###使用CocoaPods (iOS 8+, OS X 10.9+)
 
-pod 'D3View', '~> 1.0.0'
+pod 'D3View', '~> 1.2.0'
 swift调用framework需要import D3View
 
 ###普通使用
-拖动D3View目录到你的项目，只需要动画效果则只需拖动D3View.swift文件
+拖动D3View目录到你的项目，只需拖动D3View.swift文件  
+OC的只需拖动D3View.h和m文件
 
 
-  [1]: http://7vzpd0.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-06-10%20%E4%B8%8B%E5%8D%886.01.08.png
-  [2]: http://7vzpd0.com1.z0.glb.clouddn.com/mo112.gif
-  [3]: http://7vzpd0.com1.z0.glb.clouddn.com/111.gif
-  [4]: http://7vzpd0.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-06-10%20%E4%B8%8B%E5%8D%886.11.13.png
-  [5]: http://7vzpd0.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-06-10%20%E4%B8%8B%E5%8D%886.10.12.png
-  [6]: http://7vzpd0.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-06-10%20%E4%B8%8B%E5%8D%886.15.42.png
-  [7]: http://7vzpd0.com1.z0.glb.clouddn.com/more.gif
+  [1]: http://7vzpd0.com1.z0.glb.clouddn.com/mo112.gif
