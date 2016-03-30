@@ -7,40 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A531046F1B2F281D0098313F /* D3Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531046E1B2F281D0098313F /* D3Notice.swift */; };
-		A53104751B2F31BE0098313F /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53104741B2F31BE0098313F /* NoticeViewController.swift */; };
-		A53104BA1B2FAE170098313F /* D3RadioBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53104B91B2FAE170098313F /* D3RadioBtn.swift */; };
-		A53104BF1B2FB0FE0098313F /* radio_btn_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53104BC1B2FB0FE0098313F /* radio_btn_nor@2x.png */; };
-		A53104C01B2FB0FE0098313F /* radio_btn_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53104BD1B2FB0FE0098313F /* radio_btn_pre@2x.png */; };
-		A53104C11B2FB0FE0098313F /* tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A53104BE1B2FB0FE0098313F /* tab@2x.png */; };
-		A53104C31B2FB5130098313F /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53104C21B2FB5130098313F /* MoreViewController.swift */; };
-		A53104C71B2FFF430098313F /* D3ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53104C61B2FFF430098313F /* D3ActionSheet.swift */; };
-		A53104C91B3020930098313F /* D3ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53104C81B3020930098313F /* D3ScrollView.swift */; };
+		1193964F1CA8E26F00719D90 /* D3View.m in Sources */ = {isa = PBXBuildFile; fileRef = 1193964E1CA8E26F00719D90 /* D3View.m */; };
+		11C23F421CABE176004573BE /* D3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193964A1CA8E11A00719D90 /* D3View.swift */; };
 		A5501C421B1B5E8300EDCE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */; };
 		A5501C441B1B5E8300EDCE1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C431B1B5E8300EDCE1F /* ViewController.swift */; };
 		A5501C471B1B5E8300EDCE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5501C451B1B5E8300EDCE1F /* Main.storyboard */; };
 		A5501C491B1B5E8300EDCE1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5501C481B1B5E8300EDCE1F /* Images.xcassets */; };
 		A5501C4C1B1B5E8300EDCE1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5501C4A1B1B5E8300EDCE1F /* LaunchScreen.xib */; };
-		A5501C691B1B5ED800EDCE1F /* D3Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C621B1B5ED800EDCE1F /* D3Button.swift */; };
-		A5501C6A1B1B5ED800EDCE1F /* D3ImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */; };
-		A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C641B1B5ED800EDCE1F /* D3Label.swift */; };
-		A5501C6C1B1B5ED800EDCE1F /* D3TextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */; };
-		A5501C6D1B1B5ED800EDCE1F /* D3TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C661B1B5ED800EDCE1F /* D3TextView.swift */; };
-		A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C671B1B5ED800EDCE1F /* D3Venders.swift */; };
-		A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5501C681B1B5ED800EDCE1F /* D3View.swift */; };
-		A5B077571BB19E5400715A5E /* D3Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B077561BB19E5400715A5E /* D3Log.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A531046E1B2F281D0098313F /* D3Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Notice.swift; sourceTree = "<group>"; };
-		A53104741B2F31BE0098313F /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
-		A53104B91B2FAE170098313F /* D3RadioBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3RadioBtn.swift; sourceTree = "<group>"; };
-		A53104BC1B2FB0FE0098313F /* radio_btn_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_btn_nor@2x.png"; sourceTree = "<group>"; };
-		A53104BD1B2FB0FE0098313F /* radio_btn_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_btn_pre@2x.png"; sourceTree = "<group>"; };
-		A53104BE1B2FB0FE0098313F /* tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab@2x.png"; sourceTree = "<group>"; };
-		A53104C21B2FB5130098313F /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		A53104C61B2FFF430098313F /* D3ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ActionSheet.swift; sourceTree = "<group>"; };
-		A53104C81B3020930098313F /* D3ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ScrollView.swift; sourceTree = "<group>"; };
+		1193964A1CA8E11A00719D90 /* D3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3View.swift; sourceTree = "<group>"; };
+		1193964D1CA8E26F00719D90 /* D3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3View.h; sourceTree = "<group>"; };
+		1193964E1CA8E26F00719D90 /* D3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3View.m; sourceTree = "<group>"; };
+		119396501CA8E2AD00719D90 /* D3View-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "D3View-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5501C3C1B1B5E8300EDCE1F /* D3View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3View.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5501C401B1B5E8300EDCE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,14 +28,6 @@
 		A5501C461B1B5E8300EDCE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5501C481B1B5E8300EDCE1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5501C4B1B1B5E8300EDCE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A5501C621B1B5ED800EDCE1F /* D3Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Button.swift; sourceTree = "<group>"; };
-		A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3ImageVIew.swift; sourceTree = "<group>"; };
-		A5501C641B1B5ED800EDCE1F /* D3Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Label.swift; sourceTree = "<group>"; };
-		A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TextFiled.swift; sourceTree = "<group>"; };
-		A5501C661B1B5ED800EDCE1F /* D3TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3TextView.swift; sourceTree = "<group>"; };
-		A5501C671B1B5ED800EDCE1F /* D3Venders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Venders.swift; sourceTree = "<group>"; };
-		A5501C681B1B5ED800EDCE1F /* D3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3View.swift; sourceTree = "<group>"; };
-		A5B077561BB19E5400715A5E /* D3Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D3Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +44,6 @@
 		A53104BB1B2FB0FE0098313F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A53104BC1B2FB0FE0098313F /* radio_btn_nor@2x.png */,
-				A53104BD1B2FB0FE0098313F /* radio_btn_pre@2x.png */,
-				A53104BE1B2FB0FE0098313F /* tab@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -101,11 +70,10 @@
 				A5501C611B1B5EB100EDCE1F /* D3View */,
 				A5501C411B1B5E8300EDCE1F /* AppDelegate.swift */,
 				A5501C431B1B5E8300EDCE1F /* ViewController.swift */,
-				A53104C21B2FB5130098313F /* MoreViewController.swift */,
-				A53104741B2F31BE0098313F /* NoticeViewController.swift */,
 				A5501C451B1B5E8300EDCE1F /* Main.storyboard */,
 				A5501C481B1B5E8300EDCE1F /* Images.xcassets */,
 				A5501C4A1B1B5E8300EDCE1F /* LaunchScreen.xib */,
+				119396501CA8E2AD00719D90 /* D3View-Bridging-Header.h */,
 				A53104BB1B2FB0FE0098313F /* Resources */,
 				A5501C3F1B1B5E8300EDCE1F /* Supporting Files */,
 			);
@@ -123,18 +91,9 @@
 		A5501C611B1B5EB100EDCE1F /* D3View */ = {
 			isa = PBXGroup;
 			children = (
-				A53104C81B3020930098313F /* D3ScrollView.swift */,
-				A53104C61B2FFF430098313F /* D3ActionSheet.swift */,
-				A53104B91B2FAE170098313F /* D3RadioBtn.swift */,
-				A531046E1B2F281D0098313F /* D3Notice.swift */,
-				A5501C621B1B5ED800EDCE1F /* D3Button.swift */,
-				A5501C631B1B5ED800EDCE1F /* D3ImageVIew.swift */,
-				A5501C641B1B5ED800EDCE1F /* D3Label.swift */,
-				A5501C651B1B5ED800EDCE1F /* D3TextFiled.swift */,
-				A5501C661B1B5ED800EDCE1F /* D3TextView.swift */,
-				A5501C671B1B5ED800EDCE1F /* D3Venders.swift */,
-				A5501C681B1B5ED800EDCE1F /* D3View.swift */,
-				A5B077561BB19E5400715A5E /* D3Log.swift */,
+				1193964A1CA8E11A00719D90 /* D3View.swift */,
+				1193964D1CA8E26F00719D90 /* D3View.h */,
+				1193964E1CA8E26F00719D90 /* D3View.m */,
 			);
 			path = D3View;
 			sourceTree = "<group>";
@@ -165,7 +124,7 @@
 		A5501C341B1B5E8300EDCE1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = mozhenhau;
 				TargetAttributes = {
@@ -198,9 +157,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5501C471B1B5E8300EDCE1F /* Main.storyboard in Resources */,
-				A53104BF1B2FB0FE0098313F /* radio_btn_nor@2x.png in Resources */,
-				A53104C11B2FB0FE0098313F /* tab@2x.png in Resources */,
-				A53104C01B2FB0FE0098313F /* radio_btn_pre@2x.png in Resources */,
 				A5501C4C1B1B5E8300EDCE1F /* LaunchScreen.xib in Resources */,
 				A5501C491B1B5E8300EDCE1F /* Images.xcassets in Resources */,
 			);
@@ -213,22 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53104C91B3020930098313F /* D3ScrollView.swift in Sources */,
-				A531046F1B2F281D0098313F /* D3Notice.swift in Sources */,
-				A53104C31B2FB5130098313F /* MoreViewController.swift in Sources */,
-				A53104C71B2FFF430098313F /* D3ActionSheet.swift in Sources */,
-				A53104BA1B2FAE170098313F /* D3RadioBtn.swift in Sources */,
-				A5501C6E1B1B5ED800EDCE1F /* D3Venders.swift in Sources */,
-				A5501C6B1B1B5ED800EDCE1F /* D3Label.swift in Sources */,
+				11C23F421CABE176004573BE /* D3View.swift in Sources */,
 				A5501C441B1B5E8300EDCE1F /* ViewController.swift in Sources */,
-				A5501C6A1B1B5ED800EDCE1F /* D3ImageVIew.swift in Sources */,
-				A5501C691B1B5ED800EDCE1F /* D3Button.swift in Sources */,
-				A5501C6C1B1B5ED800EDCE1F /* D3TextFiled.swift in Sources */,
-				A5501C6D1B1B5ED800EDCE1F /* D3TextView.swift in Sources */,
-				A53104751B2F31BE0098313F /* NoticeViewController.swift in Sources */,
+				1193964F1CA8E26F00719D90 /* D3View.m in Sources */,
 				A5501C421B1B5E8300EDCE1F /* AppDelegate.swift in Sources */,
-				A5501C6F1B1B5ED800EDCE1F /* D3View.swift in Sources */,
-				A5B077571BB19E5400715A5E /* D3Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "D3View/D3View-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -351,10 +298,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "D3View/D3View-Bridging-Header.h";
 			};
 			name = Release;
 		};
