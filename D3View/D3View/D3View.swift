@@ -414,8 +414,9 @@ extension UIView{
                 self.d3_setRotate(80, duration: duration, completion: {
                     self.d3_setRotate(70, duration: duration, completion: {
                         UIView.animateWithDuration(duration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { 
-                                self.top = UIScreen.mainScreen().bounds.height
+                                self.top = UIScreen.mainScreen().bounds.height+self.frame.size.height
                             }, completion: { (finished) in
+                                self.layer.anchorPoint = CGPointMake(0.5, 0.5)
                                 completion?()
                         })
                         
