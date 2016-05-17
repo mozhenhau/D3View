@@ -12,7 +12,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var d3view: UIView!
     var exFrame:CGRect!
     
-    var dataSource = ["闪亮","左右摇","上下摇","心跳","摇摆","缩小","放大","掉落","翻转","翻页","推出","覆盖","揭开","3D立方","抽走","不停旋转","渐隐","渐现"]
+    var dataSource = ["放大出现","缩小消失","闪亮","左右摇","上下摇","心跳","摇摆","缩小","放大","掉落","翻转","翻页","推出","覆盖","揭开","3D立方","抽走","不停旋转","渐隐","渐现"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +41,17 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //重置
         d3view.transform = CGAffineTransformIdentity
-        d3view.frame = exFrame
+        d3view.size = CGSizeMake(exFrame.width, exFrame.height)
+        d3view.d3_setPoint(CGPointMake(exFrame.origin.x, exFrame.origin.y), completion: nil)
         d3view.alpha = 1
         
-        switch row{
+        switch row-2{
+        case -2:
+            d3view.d3_scaleIn()
+            
+        case -1:
+            d3view.d3_scaleOut(0.8, siteType: .Center)
+            
         case 0:  //闪亮
             d3view.d3_blink()
             
@@ -127,5 +134,16 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
         }
 
     }
+    
+    @IBAction func clickDown(sender: UIButton) {
+        d3view.d3_scaleOut(3, siteType: .Center)
+    }
+    
+    @IBAction func clickUp(sender: UIButton) {
+        d3view.d3_scale_stop()
+    }
+    
+    
+    
 }
 

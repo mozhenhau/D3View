@@ -34,14 +34,25 @@
                                     <constraint firstAttribute="height" constant="100" id="D6d-ku-BWZ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-ba-SmW">
+                                <rect key="frame" x="534" y="170" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clickDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="3Tc-Rm-FXV"/>
+                                    <action selector="clickUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="S5O-mV-Dbu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="55z-5D-R9V" secondAttribute="bottom" id="0J2-ss-ARh"/>
                             <constraint firstItem="55z-5D-R9V" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="30m-SR-PO0"/>
                             <constraint firstItem="55z-5D-R9V" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5qN-xz-Z5S"/>
                             <constraint firstItem="55z-5D-R9V" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="1/2" id="7Gs-h5-vjc"/>
                             <constraint firstAttribute="centerX" secondItem="QF9-ab-tP8" secondAttribute="centerX" id="NWX-E9-gNv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N1M-ba-SmW" secondAttribute="trailing" id="QIJ-tI-i4W"/>
+                            <constraint firstItem="N1M-ba-SmW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="150" id="TZX-9f-jY9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="55z-5D-R9V" secondAttribute="trailing" constant="-20" id="fU3-Qh-HrK"/>
                             <constraint firstItem="QF9-ab-tP8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="icn-qC-cjU"/>
                         </constraints>

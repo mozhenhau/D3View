@@ -4,6 +4,20 @@ import UIKit
 //MARK: UIView动画扩展,d3开头的都是带动画的
 var DEFAULT_DURATION:NSTimeInterval = 0.25
 typealias CompleteBlock = (() -> Void)?
+
+enum D3SiteType:Int {
+    case Left
+    case Right
+    case Top
+    case Bottom
+    case LeftTop
+    case RightTop
+    case LeftBottom
+    case RightBottom
+    case Center
+}
+
+
 extension UIView{
     
     var left:CGFloat{
@@ -101,6 +115,91 @@ extension UIView{
         }
     }
     
+    
+    var leftPoint:CGPoint{
+        set{
+            self.left = newValue.x
+            self.centerY = newValue.y
+        }
+        get{
+            return CGPointMake(left, centerY)
+        }
+    }
+    
+    var rightPoint:CGPoint{
+        set{
+            self.right = newValue.x
+            self.centerY = newValue.y
+        }
+        get{
+            return CGPointMake(right, centerY)
+        }
+    }
+    
+    var topPoint:CGPoint{
+        set{
+            self.centerX = newValue.x
+            self.top = newValue.y
+        }
+        get{
+            return CGPointMake(centerX, top)
+        }
+    }
+    
+    var bottomPoint:CGPoint{
+        set{
+            self.centerX = newValue.x
+            self.bottom = newValue.y
+        }
+        get{
+            return CGPointMake(centerX, bottom)
+        }
+    }
+    
+    
+    var leftTopPoint:CGPoint{
+        set{
+            self.left = newValue.x
+            self.top = newValue.y
+        }
+        get{
+            return CGPointMake(left, top)
+        }
+    }
+    
+    
+    var rightTopPoint:CGPoint{
+        set{
+            self.right = newValue.x
+            self.top = newValue.y
+        }
+        get{
+            return CGPointMake(right, top)
+        }
+    }
+    
+    
+    var leftBottomPoint:CGPoint{
+        set{
+            self.left = newValue.x
+            self.bottom = newValue.y
+        }
+        get{
+            return CGPointMake(left, bottom)
+        }
+    }
+    
+    
+    var rightBottomPoint:CGPoint{
+        set{
+            self.right = newValue.x
+            self.bottom = newValue.y
+        }
+        get{
+            return CGPointMake(right, bottom)
+        }
+    }
+    
     var size:CGSize{
         set{
             var frame = self.frame;
@@ -160,10 +259,31 @@ extension UIView{
         })
     }
     
-    //停止所有动画
-    func d3_removeAnimate(){
+    //停止动画
+    func d3_stop(){
         self.layer.removeAllAnimations()
     }
+    
+    //暂停动画
+    func d3_pause(){
+        let pauseTime = self.layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        print("暂停:\(pauseTime)")
+        self.layer.speed = 0.0
+        self.layer.timeOffset = pauseTime
+    }
+    
+    //恢复动画
+    func d3_resume(){
+        let pauseTime = self.layer.timeOffset
+        layer.speed = 1
+        layer.timeOffset = 0
+        layer.beginTime = 0
+        let timeSincePause = layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pauseTime
+        print("暂停结束:\(timeSincePause)")
+        layer.beginTime = timeSincePause
+    }
+    
+    
     
     //角度转弧度
     func degreesToRadians(angle:CGFloat)->CGFloat
@@ -173,28 +293,36 @@ extension UIView{
     
     
     func d3_setX(x:CGFloat,completion:CompleteBlock){
-        self.d3_setX(x, duration: DEFAULT_DURATION, completion: completion)
+        self.d3_setX(x, duration: DEFAULT_DURATION, delay: 0,usingSpringWithDamping: 1, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
     }
     
     
-    func d3_setX(x:CGFloat,duration:NSTimeInterval,completion:CompleteBlock){
-        UIView.animateWithDuration(duration, animations: {
+    func d3_setX(x:CGFloat,usingSpringWithDamping:CGFloat ,completion:CompleteBlock){
+        self.d3_setX(x, duration: DEFAULT_DURATION, delay: 0,usingSpringWithDamping: usingSpringWithDamping, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
+    }
+    
+    func d3_setX(x:CGFloat,duration:NSTimeInterval,delay:NSTimeInterval,usingSpringWithDamping:CGFloat, options:UIViewAnimationOptions, completion:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: usingSpringWithDamping, initialSpringVelocity: 1, options: options, animations: {
             self.left = x
-            }, completion: {(finished) in
+        }, completion: { f in
                 completion?()
         })
     }
     
     
     func d3_setY(y:CGFloat,completion:CompleteBlock){
-        self.d3_setY(y, duration: DEFAULT_DURATION, completion: completion)
+        self.d3_setY(y, duration: DEFAULT_DURATION, delay: 0,usingSpringWithDamping: 1, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
+    }
+    
+    func d3_setY(y:CGFloat,usingSpringWithDamping:CGFloat,completion:CompleteBlock){
+        self.d3_setY(y, duration: DEFAULT_DURATION, delay: 0,usingSpringWithDamping: usingSpringWithDamping, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
     }
     
     
-    func d3_setY(y:CGFloat,duration:NSTimeInterval,completion:CompleteBlock){
-        UIView.animateWithDuration(duration, animations: {
+    func d3_setY(y:CGFloat,duration:NSTimeInterval,delay:NSTimeInterval,usingSpringWithDamping:CGFloat,options:UIViewAnimationOptions, completion:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: usingSpringWithDamping, initialSpringVelocity: 1,  options: options, animations: {
             self.top = y
-        }, completion: {(f) in
+            }, completion: { f in
                 completion?()
         })
     }
@@ -229,23 +357,28 @@ extension UIView{
         })
     }
     
-    
-    func d3_setPoint(point:CGPoint,duration:NSTimeInterval,completion:CompleteBlock){
-        UIView.animateWithDuration(duration, animations: {
+    //usingSpringWithDamping 越大弹簧震动越大
+    func d3_setPoint(point:CGPoint,duration:NSTimeInterval,delay:NSTimeInterval,usingSpringWithDamping:CGFloat,options:UIViewAnimationOptions, completion:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: usingSpringWithDamping, initialSpringVelocity: 1, options: options, animations: {
             self.origin = point
-        }, completion: {(finished) in
-            completion?()
+            }, completion: { f in
+                completion?()
         })
     }
     
+    func d3_setPoint(point:CGPoint,usingSpringWithDamping:CGFloat,completion:CompleteBlock){
+        self.d3_setPoint(point, duration: DEFAULT_DURATION,delay: 0,usingSpringWithDamping:usingSpringWithDamping, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
+    }
+    
+    
     func d3_setPoint(point:CGPoint,completion:CompleteBlock){
-        self.d3_setPoint(point, duration: DEFAULT_DURATION, completion: completion)
+        self.d3_setPoint(point, duration: DEFAULT_DURATION,delay: 0,usingSpringWithDamping:1, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
     }
     
     
     //在原来基础上移动
     func d3_moveX(x:CGFloat,duration:NSTimeInterval,completion:CompleteBlock){
-        self.d3_setX(self.frame.origin.x+x, duration: duration, completion: completion)
+        self.d3_setX(self.frame.origin.x+x, duration: duration, delay: 0,usingSpringWithDamping:1, options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
     }
     
     func d3_moveX(x:CGFloat,completion:CompleteBlock){
@@ -253,7 +386,7 @@ extension UIView{
     }
     
     func d3_moveY(y:CGFloat,duration:NSTimeInterval,completion:CompleteBlock){
-        self.d3_setY(self.frame.origin.y+y, duration: duration, completion: completion)
+        self.d3_setY(self.frame.origin.y+y, duration: duration, delay: 0,usingSpringWithDamping:1,options: UIViewAnimationOptions.CurveEaseOut, completion: completion)
     }
     
     func d3_moveY(y:CGFloat,completion:CompleteBlock){
@@ -364,40 +497,46 @@ extension UIView{
     /**
      整体放大缩小
      */
-    func d3_scale(scale:CGFloat,duration:NSTimeInterval, finish:CompleteBlock){
-        UIView.animateWithDuration(duration) { 
+    func d3_scale(scale:CGFloat,duration:NSTimeInterval,delay:NSTimeInterval,options:UIViewAnimationOptions, finish:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.transform = CGAffineTransformMakeScale(scale, scale)
-        }
+        }, completion: { f in
+                finish?()
+        })
     }
     
     func d3_scale(scale:CGFloat){
-        self.d3_scale(scale, duration: DEFAULT_DURATION, finish: nil)
+        self.d3_scale(scale, duration: DEFAULT_DURATION,delay: 0,options: UIViewAnimationOptions.CurveEaseOut, finish: nil)
     }
     
     /**
      宽放大缩小
      */
-    func d3_scaleX(scale:CGFloat,duration:NSTimeInterval, finish:CompleteBlock){
-        UIView.animateWithDuration(duration) {
+    func d3_scaleX(scale:CGFloat,duration:NSTimeInterval,delay:NSTimeInterval,options:UIViewAnimationOptions,  finish:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
             self.transform = CGAffineTransformMakeScale(scale, 1)
-        }
+            }, completion: { f in
+                finish?()
+        })
     }
     
     func d3_scaleX(scale:CGFloat){
-        self.d3_scaleX(scale, duration: DEFAULT_DURATION, finish: nil)
+        self.d3_scaleX(scale, duration: DEFAULT_DURATION,delay: 0,options: UIViewAnimationOptions.CurveEaseOut, finish: nil)
     }
     
     /**
      高放大缩小
      */
-    func d3_scaleY(scale:CGFloat,duration:NSTimeInterval, finish:CompleteBlock){
-        UIView.animateWithDuration(duration) {
-            self.transform = CGAffineTransformMakeScale(1, scale)
-        }
+    func d3_scaleY(scale:CGFloat,duration:NSTimeInterval, delay:NSTimeInterval,options:UIViewAnimationOptions,  finish:CompleteBlock){
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.transform = CGAffineTransformMakeScale(scale, 1)
+            }, completion: { f in
+                finish?()
+        })
     }
     
     func d3_scaleY(scale:CGFloat){
-        self.d3_scaleY(scale, duration: DEFAULT_DURATION, finish: nil)
+        self.d3_scaleY(scale, duration: DEFAULT_DURATION,delay: 0,options: UIViewAnimationOptions.CurveEaseOut, finish: nil)
     }
     
 
@@ -452,7 +591,7 @@ extension UIView{
     
     //MARK: 闪,呼吸灯
     func d3_blink(duration:NSTimeInterval){
-        UIView.animateWithDuration(duration, delay: 0, options: [.Repeat,.Autoreverse,.CurveEaseInOut], animations: { 
+        UIView.animateWithDuration(duration, delay: 0, options: [.Repeat,.Autoreverse,.CurveEaseOut], animations: { 
             self.alpha = 0;
         }, completion: nil)
     }
@@ -489,4 +628,117 @@ extension UIView{
         self.d3_fadeIn(0.5, completion: nil)
     }
     
+    
+    func  d3_scaleIn(){
+        d3_Scale_Transite(0.5, siteType: .LeftTop, hide: false)
+    }
+    
+    func  d3_scaleIn(duration:NSTimeInterval,siteType:D3SiteType){
+        d3_Scale_Transite(duration, siteType: siteType, hide: false)
+    }
+    
+    func  d3_scaleOut(){
+        d3_Scale_Transite(0.5, siteType: .LeftTop, hide: true)
+    }
+    
+    func  d3_scaleOut(duration:NSTimeInterval,siteType:D3SiteType){
+        d3_Scale_Transite(duration, siteType: siteType, hide: true)
+    }
+    
+    func d3_scale_stop(){
+        
+        let oldAnimation = self.layer.mask?.animationForKey("transform.scale") as? CABasicAnimation
+        let pauseTime = layer.mask?.timeOffset
+        let toValue = oldAnimation!.toValue!.doubleValue
+        let fromValue = oldAnimation!.fromValue!.doubleValue
+        let duration = oldAnimation!.duration
+        self.layer.mask?.removeAllAnimations()
+        
+        if oldAnimation != nil && (self.layer.mask?.convertTime(CACurrentMediaTime(), fromLayer: nil)) != nil{
+            let maskLayerAnimation = CABasicAnimation(keyPath: "transform.scale")
+            let timeSincePause = (self.layer.mask?.convertTime(CACurrentMediaTime(), fromLayer: nil))! - pauseTime!*2
+            maskLayerAnimation.duration = timeSincePause
+            
+            if fromValue > toValue { //原来是缩小
+                let nowValue = fromValue - fromValue*timeSincePause/duration
+                maskLayerAnimation.fromValue = nowValue
+                maskLayerAnimation.toValue = fromValue
+            }
+            else{
+                let nowValue = toValue*timeSincePause/duration
+                maskLayerAnimation.fromValue = nowValue
+                maskLayerAnimation.toValue = fromValue
+            }
+            maskLayerAnimation.removedOnCompletion = false
+            maskLayerAnimation.fillMode = kCAFillModeForwards
+            maskLayerAnimation.delegate = self
+            layer.mask?.addAnimation(maskLayerAnimation, forKey: "transform.scale")
+            self.layer.mask?.timeOffset = (self.layer.mask?.convertTime(CACurrentMediaTime(), fromLayer: nil))!
+        }
+        
+        
+        //        layer.beginTime = timeSincePause
+        //        print(toValue)
+        
+    }
+    
+    func d3_Scale_Transite(duration:NSTimeInterval,siteType:D3SiteType,hide:Bool){  //转场
+        let layer = CAShapeLayer()
+        layer.cornerRadius = 5
+        layer.backgroundColor = UIColor.whiteColor().CGColor
+        let layerSize:CGFloat = 10
+        
+        self.layer.mask = layer
+        
+        let maskLayerAnimation = CABasicAnimation(keyPath: "transform.scale")
+        maskLayerAnimation.duration = duration
+        var toValue = sqrt(pow(self.bounds.width,2)+pow(self.bounds.height,2))/layerSize*2
+        
+        
+        switch siteType {
+        case .Left:
+            layer.frame = CGRectMake(-layerSize/2, self.height/2-layerSize/2, layerSize, layerSize)
+            toValue = sqrt(pow(self.bounds.width,2)+pow(self.bounds.height/2,2))/layerSize*2
+            
+        case .Right:
+            layer.frame = CGRectMake(self.width-layerSize/2, self.self.height/2-layerSize/2, layerSize, layerSize)
+            toValue = sqrt(pow(self.bounds.width,2)+pow(self.bounds.height/2,2))/layerSize*2
+            
+        case .Top:
+            layer.frame = CGRectMake(self.width/2-layerSize/2, -layerSize/2, layerSize, layerSize)
+            toValue = sqrt(pow(self.bounds.width/2,2)+pow(self.bounds.height,2))/layerSize*2
+            
+        case .Bottom:
+            layer.frame = CGRectMake(self.width/2-layerSize/2, self.height+layerSize/2, layerSize, layerSize)
+            toValue = sqrt(pow(self.bounds.width/2,2)+pow(self.bounds.height,2))/layerSize*2
+            
+        case .LeftTop:
+            layer.frame = CGRectMake(-layerSize/2, -layerSize/2, layerSize, layerSize)
+            
+        case .LeftBottom:
+            layer.frame = CGRectMake(-layerSize/2, self.height-layerSize/2, layerSize, layerSize)
+            
+        case .RightTop:
+            layer.frame = CGRectMake(self.width-layerSize/2, -layerSize/2, layerSize, layerSize)
+            
+        case .RightBottom:
+            layer.frame = CGRectMake(self.width-layerSize/2, self.height-layerSize/2, layerSize, layerSize)
+            
+        case .Center:
+            layer.frame = CGRectMake(self.width/2-layerSize/2, self.height/2-layerSize/2, layerSize, layerSize)
+            toValue = sqrt(pow(self.bounds.width/2,2)+pow(self.bounds.height/2,2))/layerSize*2
+        }
+        
+        
+        maskLayerAnimation.fromValue = hide ? toValue : 1
+        maskLayerAnimation.toValue = hide ? 0.0001 : toValue
+        //不还原
+        maskLayerAnimation.removedOnCompletion = false
+        maskLayerAnimation.fillMode = kCAFillModeForwards
+        maskLayerAnimation.delegate = self
+        layer.addAnimation(maskLayerAnimation, forKey: "transform.scale")
+        if self.layer.mask?.convertTime(CACurrentMediaTime(), fromLayer: nil) != nil {
+            self.layer.mask?.timeOffset = (self.layer.mask?.convertTime(CACurrentMediaTime(), fromLayer: nil))!
+        }
+    }
 }
