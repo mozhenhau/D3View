@@ -22,27 +22,36 @@ class ViewController: UIViewController{
     override func viewDidLayoutSubviews() {
         exFrame = d3view.frame
     }
+    
+    @IBAction func clickButton(_ sender: UIButton) {
+         d3view.d3_scale_stop()
+    }
+    
+    
+    @IBAction func clickDown(_ sender: UIButton) {
+        d3view.d3_scaleOut(1, siteType: .Center)
+    }
+    
 
 }
 
 extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataSource.count
     }
-
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataSource[row]
     }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //重置
-        d3view.transform = CGAffineTransformIdentity
-        d3view.size = CGSizeMake(exFrame.width, exFrame.height)
-        d3view.d3_setPoint(CGPointMake(exFrame.origin.x, exFrame.origin.y), completion: nil)
+        d3view.transform = CGAffineTransform.identity
+        d3view.size = CGSize(width:exFrame.width, height:exFrame.height)
+        d3view.d3_setPoint(CGPoint(x:exFrame.origin.x, y:exFrame.origin.y), completion: nil)
         d3view.alpha = 1
         
         switch row-2{
@@ -119,7 +128,7 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             
         case 14:
             d3view.d3_Animation("suckEffect", subType: kCATransitionFromRight, duration: 1.0)
-        
+            
         case 15:  //不停旋转. 如果执行过掉落，这里可能有问题
             d3view.d3_setRotate(-1, duration: 1, completion: nil)
             
@@ -134,16 +143,6 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
         }
 
     }
-    
-    @IBAction func clickDown(sender: UIButton) {
-        d3view.d3_scaleOut(3, siteType: .Center)
-    }
-    
-    @IBAction func clickUp(sender: UIButton) {
-        d3view.d3_scale_stop()
-    }
-    
-    
     
 }
 

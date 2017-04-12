@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--动画-->
@@ -16,34 +20,34 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55z-5D-R9V">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <rect key="frame" x="-4" y="333.5" width="383" height="333.5"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="5ml-gB-NQX"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="L2Y-wQ-cHA"/>
                                 </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QF9-ab-tP8">
-                                <rect key="frame" x="250" y="100" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.013796687126159668" green="0.47876036167144775" blue="0.98392951488494873" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137.5" y="100" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.013796687126159668" green="0.47876036167144775" blue="0.98392951488494873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="043-lS-lBj"/>
                                     <constraint firstAttribute="height" constant="100" id="D6d-ku-BWZ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-ba-SmW">
-                                <rect key="frame" x="534" y="170" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="328" y="170" width="31" height="30"/>
+                                <state key="normal" title="长按"/>
                                 <connections>
-                                    <action selector="clickDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="3Tc-Rm-FXV"/>
-                                    <action selector="clickUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="S5O-mV-Dbu"/>
+                                    <action selector="clickButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a3x-wM-yLN"/>
+                                    <action selector="clickDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="9Zn-rT-QXf"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="55z-5D-R9V" secondAttribute="bottom" id="0J2-ss-ARh"/>
