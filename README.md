@@ -1,7 +1,7 @@
 
 #D3View
 ##简介
-已更新至兼容swift3.0
+已更新至兼容swift3.0  
 一句代码轻松实现IOS常用动画效果的超轻量库，旨在实现一些简单的动画效果基础  
 有swift和oc的版本。需要什么版本自己拖到项目，两者只需其中一个  
 Swift只需要拖D3View.swift到项目，Objective-c需要D3View.h和D3View.m到项目,都是UIView扩展类  
