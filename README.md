@@ -1,8 +1,9 @@
 
 #D3View
 ##简介
-一句代码轻松实现IOS常用动画效果的超轻量库，旨在实现一些简单的动画效果基础  
-有swift和oc的版本。需要什么版本自己拖到项目，两者只需其中一个  
+已更新至兼容swift3.0
+一句代码轻松实现IOS常用动画效果的超轻量库，旨在实现一些简单的动画效果基础  
+有swift和oc的版本。需要什么版本自己拖到项目，两者只需其中一个  
 Swift只需要拖D3View.swift到项目，Objective-c需要D3View.h和D3View.m到项目,都是UIView扩展类  
   
 有希望实现的动画效果可以提issue，本人有空可以尝试实现 0.0  
@@ -24,7 +25,8 @@ Swift只需要拖D3View.swift到项目，Objective-c需要D3View.h和D3View.m到
 ##安装使用(swift)
 ###使用CocoaPods (iOS 8+, OS X 10.9+)
 
-pod 'D3View', '~> 1.2.0'
+pod 'D3View', '~> 1.3.1'  
+
 swift调用framework需要import D3View
 
 ###普通使用
